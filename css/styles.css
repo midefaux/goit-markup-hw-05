@@ -70,15 +70,16 @@ img {
 }
 .link.active {
   color: var(--active);
+  position:relative;
 }
 .link.active::after {
-  content: "";
+  content:"";
   background-color: var(--active);
   position: absolute;
-  left: 0;
-  top: calc(100% + 28px);
-  width: 100%;
-  height: 4px;
+  width: 60%;
+  height: 5px;
+  border-radius: 25px;
+  bottom: -29px;
 }
 
 .link:active,
@@ -511,7 +512,7 @@ img {
 .icon-client:hover {
   fill: var(--active);
 }
-
+/*------potafolio------*/
 .filter {
   list-style-type: none;
   display: flex;
@@ -734,6 +735,26 @@ img {
 .filter-link {
   color: var(--filter-text);
   text-decoration: none;
+}
+.filter-frame{
+  position: relative;
+  overflow: hidden;
+  
+}
+.filter-frame .overlay{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(33, 150, 243, 0.9);
+  top: -15px;
+  left: 0;
+  color: #ffffff;
+  padding:24px;
+  transform: translateY(100%);
+  transition: transform ease-in .25s;
+}
+.filter-items li:hover .filter-frame .overlay{
+  transform: translateY(0);
 }
 .filter-imagen {
   border: 2px solid #fff;
